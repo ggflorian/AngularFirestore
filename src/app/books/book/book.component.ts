@@ -12,7 +12,7 @@ import { ToastrService } from 'ngx-toastr';
 export class BookComponent implements OnInit {
 
   constructor(
-    private bookService: BookService,
+    public bookService: BookService,
     private firestore: AngularFirestore,
     private toastr: ToastrService
   ) { }
@@ -38,7 +38,7 @@ export class BookComponent implements OnInit {
       this.firestore.doc('books/' + bookFrm.value.id).update(data);
 
     this.resetForm(bookFrm);
-    this.toastr.success('Salvare cu succes!', 'Book register');
+    this.toastr.success('Salvare cu succes!', 'Book Register');
   }
   
 }

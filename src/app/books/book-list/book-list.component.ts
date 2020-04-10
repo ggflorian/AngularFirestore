@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from 'src/app/shared/book.model';
 import { BookService } from 'src/app/shared/book.service';
-import { AngularFirestore } from '@angular/fire/firestore/firestore';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -24,7 +24,7 @@ export class BookListComponent implements OnInit {
       this.list = actionArray.map(item => {
         return {
           id: item.payload.doc.id,
-          ...item.payload.doc.data()
+          ...(item.payload.doc.data()) as Book
         } as Book
       })
     });
