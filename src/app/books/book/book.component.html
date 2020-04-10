@@ -1,4 +1,5 @@
-<h1 class="display-4">Book Register</h1>
+<h1 class="display-4">Book Detail</h1>
+
 <form #bookForm="ngForm" autocomplete="on" (submit)="onSubmit(bookForm)">
 
   <input type="hidden" name="id" [(ngModel)]="bookService.formData.id">

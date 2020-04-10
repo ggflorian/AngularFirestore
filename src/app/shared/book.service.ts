@@ -9,9 +9,7 @@ export class BookService {
 
   formData: Book;
 
-  constructor(
-    private firestore: AngularFirestore
-  ) { }
+  constructor(private firestore: AngularFirestore) { }
 
   getBooks(){
     return this.firestore.collection('books').snapshotChanges();

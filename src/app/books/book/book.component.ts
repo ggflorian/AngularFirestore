@@ -20,14 +20,25 @@ export class BookComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  resetForm(bookFrm?: NgForm){
+    if (bookFrm != null)
+      bookFrm.resetForm();
+    
+    this.bookService.formData = {id:null, title:'', author:'', code: '', price: 0};
+  }
+
   onSubmit(bookFrm: NgForm){
     let data = Object.assign({}, bookFrm.value);
     console.log('subm1 '); console.log(data);
     delete data.id;
 
-    if(data.id == null)
+    if(bookFrm.value.id == null)
       this.firestore.collection('books').add(data);
-    
+    else
+      this.firestore.doc('books/' + bookFrm.value.id).update(data);
+
+    this.resetForm(bookFrm);
+    this.toastr.success('Salvare cu succes!', 'Book register');
   }
   
 }
