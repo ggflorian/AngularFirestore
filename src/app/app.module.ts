@@ -22,6 +22,10 @@ import { CustomerDetailsComponent } from './customers/customer-details/customer-
 import { CustomersListComponent } from './customers/customers-list/customers-list.component';
 import { CreateCustomerComponent } from './customers/create-customer/create-customer.component';
 import { CustomerService } from './customers/customer.service';
+import { EmployeesComponent } from './employees/employees.component';
+import { EmployeeComponent } from './employees/employee/employee.component';
+import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
+import { EmployeeService } from './shared/employee.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +37,11 @@ import { CustomerService } from './customers/customer.service';
 
     CustomerDetailsComponent,
     CustomersListComponent,
-    CreateCustomerComponent
+    CreateCustomerComponent,
+
+    EmployeesComponent,
+    EmployeeComponent,
+    EmployeeListComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +52,7 @@ import { CustomerService } from './customers/customer.service';
     AngularFireDatabaseModule,
     ToastrModule.forRoot()
   ],
-  providers: [BookService, CustomerService],
+  providers: [BookService, CustomerService, EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
