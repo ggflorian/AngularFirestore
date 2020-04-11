@@ -13,6 +13,14 @@ export const environment = {
     storageBucket: "fgangbooksfirestore.appspot.com",
     messagingSenderId: "520253474051",
     appId: "1:520253474051:web:84e8970d64ebe4ed9ed536"
+  },
+  firebaseConfigCA: {
+    apiKey: "AIzaSyBgHu5nUzmDbrnNDmjpCOfctLFTD3iW9FU",
+    authDomain: "firestorecrud-4f122.firebaseapp.com",
+    databaseURL: "https://firestorecrud-4f122.firebaseio.com",
+    projectId: "firestorecrud-4f122",
+    storageBucket: "firestorecrud-4f122.appspot.com",
+    messagingSenderId: "421200318388"
   }
 };
 

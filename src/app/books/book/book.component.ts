@@ -32,8 +32,13 @@ export class BookComponent implements OnInit {
     console.log('subm1 '); console.log(data);
     delete data.id;
 
-    if(bookFrm.value.id == null)
+    if(bookFrm.value.id == null) {
+      console.log('subm2 '); console.log(data);
+
       this.firestore.collection('books').add(data);
+
+      console.log('subm3 '); console.log(data);
+    }
     else
       this.firestore.doc('books/' + bookFrm.value.id).update(data);
 
