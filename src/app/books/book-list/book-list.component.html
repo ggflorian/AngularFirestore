@@ -1,7 +1,7 @@
 <table class="table table-hover">
 
     <thead>
-        <th>Titlu</th>
+        <th>Titlu Carte</th>
         <th>Autor(i)</th>
         <th>Pret</th>
         <th></th>
@@ -10,7 +10,7 @@
         <tr *ngFor="let bk of list">
             <td (click)="onEdit(bk)">{{bk.code}} - {{bk.title}}</td>
             <td (click)="onEdit(bk)">{{bk.author}}</td>
-            <td (click)="onEdit(bk)">{{bk.price.mobile}}</td>
+            <td (click)="onEdit(bk)">{{bk.price}}</td>
             <td><a class="btn text-danger" (click)="onDelete(bk.id)"><i class="fa fa-trash"></i></a></td>
         </tr>
     </tbody>
