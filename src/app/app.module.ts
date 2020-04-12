@@ -47,7 +47,7 @@ import { EmployeeService } from './shared/employee.service';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebaseConfigCA),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AngularFireDatabaseModule,
     ToastrModule.forRoot()
