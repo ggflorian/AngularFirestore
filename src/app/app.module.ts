@@ -16,16 +16,14 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { ToastrModule } from 'ngx-toastr'
 
 import { environment } from 'src/environments/environment';
+
 import { AngularFireDatabaseModule } from '@angular/fire/database'; // without public_api?
 import { AppRoutingModule } from './app-routing.module';
+
 import { CustomerDetailsComponent } from './customers/customer-details/customer-details.component';
 import { CustomersListComponent } from './customers/customers-list/customers-list.component';
 import { CreateCustomerComponent } from './customers/create-customer/create-customer.component';
 import { CustomerService } from './customers/customer.service';
-import { EmployeesComponent } from './employees/employees.component';
-import { EmployeeComponent } from './employees/employee/employee.component';
-import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
-import { EmployeeService } from './shared/employee.service';
 
 @NgModule({
   declarations: [
@@ -38,21 +36,17 @@ import { EmployeeService } from './shared/employee.service';
     CustomerDetailsComponent,
     CustomersListComponent,
     CreateCustomerComponent,
-
-    EmployeesComponent,
-    EmployeeComponent,
-    EmployeeListComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireModule.initializeApp(environment.firebaseConfigDb),
     AngularFirestoreModule,
     AngularFireDatabaseModule,
     ToastrModule.forRoot()
   ],
-  providers: [BookService, CustomerService, EmployeeService],
+  providers: [BookService, CustomerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

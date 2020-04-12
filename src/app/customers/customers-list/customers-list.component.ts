@@ -24,8 +24,8 @@ export class CustomersListComponent implements OnInit {
           ({ key: c.payload.key, ...c.payload.val() })
         )
       )
-    ).subscribe(customers => {
-      this.customers = customers;
+    ).subscribe(custs => {
+      this.customers = custs;
     });
   }
 

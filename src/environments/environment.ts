@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  mail: "mikagG",
-  firebaseConfig: {
+  mail1: "mikagG",
+  firebaseConfigSt: {
     apiKey: "AIzaSyCHOnqlgiMKDp7tM3J135TCCNAHYhPYNZ8",
     authDomain: "fgangbooksfirestore.firebaseapp.com",
     databaseURL: "https://fgangbooksfirestore.firebaseio.com",
@@ -14,13 +14,14 @@ export const environment = {
     messagingSenderId: "520253474051",
     appId: "1:520253474051:web:84e8970d64ebe4ed9ed536"
   },
-  firebaseConfigCA: {
-    apiKey: "AIzaSyBgHu5nUzmDbrnNDmjpCOfctLFTD3iW9FU",
-    authDomain: "firestorecrud-4f122.firebaseapp.com",
-    databaseURL: "https://firestorecrud-4f122.firebaseio.com",
-    projectId: "firestorecrud-4f122",
-    storageBucket: "firestorecrud-4f122.appspot.com",
-    messagingSenderId: "421200318388"
+  firebaseConfigDb: {
+    apiKey: "AIzaSyDno4tCAXlKKcrBvbUI0IQ-A_er_GgPvvY",
+    authDomain: "fgcustomerdatabase.firebaseapp.com",
+    databaseURL: "https://fgcustomerdatabase.firebaseio.com",
+    projectId: "fgcustomerdatabase",
+    storageBucket: "fgcustomerdatabase.appspot.com",
+    messagingSenderId: "1037092758692",
+    appId: "1:1037092758692:web:655f3fb6b0743a9b34b231"
   }
 };
 
