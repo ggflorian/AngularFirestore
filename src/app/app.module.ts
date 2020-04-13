@@ -41,7 +41,7 @@ import { CustomerService } from './customers/customer.service';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebaseConfigDb),
+    AngularFireModule.initializeApp(environment.firebaseConfigSt),
     AngularFirestoreModule,
     AngularFireDatabaseModule,
     ToastrModule.forRoot()

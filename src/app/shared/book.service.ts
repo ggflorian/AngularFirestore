@@ -9,9 +9,14 @@ export class BookService {
 
   formData: Book;
 
+  private stPath = 'books';
   constructor(private firestore: AngularFirestore) { }
 
-  getBooks(){
+  getBooks() {
     return this.firestore.collection('books').snapshotChanges();
+  }
+
+  createBook(book: Book): void {
+    this.firestore.collection(this.stPath).add(book);
   }
 }
