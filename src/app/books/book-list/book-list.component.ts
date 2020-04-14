@@ -36,8 +36,9 @@ export class BookListComponent implements OnInit {
 
   onDelete(id: string){
     if (confirm("Sunteti sigur ca doriti stergerea inregistrarii?")){
-      this.firestore.doc('books/' + id).delete();
-      this.toastr.warning('Stergere efectuata cu succes!', 'Book Register');
+      //this.firestore.doc('books/' + id).delete();
+      this.bookService.deleteBook(id);
+      this.toastr.warning('Stergerea s-a efectuat cu succes!', 'Book Register');
     }
   }
 

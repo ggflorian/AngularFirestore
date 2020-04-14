@@ -34,17 +34,16 @@ export class BookComponent implements OnInit {
     delete data.id;
 
     if(bookFrm.value.id == null) {
-      console.log('subm2 '); console.log(data);
-
-      this.firestore.collection('books').add(data);
-
-      console.log('subm3 '); console.log(data);
+      //this.firestore.collection('books').add(data);
+      //console.log('subm2 '); console.log(data);
+      this.bookService.addBook(data);
     }
     else
-      this.firestore.doc('books/' + bookFrm.value.id).update(data);
+      //this.firestore.doc('books/' + bookFrm.value.id).update(data);
+      this.bookService.updateBook(bookFrm.value.id, data);
 
     this.resetForm(bookFrm);
-    this.toastr.success('Salvare cu succes!', 'Book Register');
+    this.toastr.success('Salvare date cu succes!', 'Book Register');
   }
   
 }

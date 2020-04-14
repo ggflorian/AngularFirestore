@@ -13,10 +13,18 @@ export class BookService {
   constructor(private firestore: AngularFirestore) { }
 
   getBooks() {
-    return this.firestore.collection('books').snapshotChanges();
+    return this.firestore.collection(this.stPath).snapshotChanges();
   }
 
-  createBook(book: Book): void {
+  addBook(book: Book): void {
     this.firestore.collection(this.stPath).add(book);
+  }
+
+  updateBook(key: string, value: any): Promise<void> {
+    return this.firestore.doc(this.stPath+'/' + key).update(value);
+  }
+
+  deleteBook(key: string): Promise<void> {
+    return this.firestore.doc(this.stPath+'/' + key).delete();
   }
 }
