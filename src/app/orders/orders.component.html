@@ -1,5 +1,7 @@
 <h5>Coffee Order:</h5>
+
 <form [formGroup]="this.ordersService.form">
+
   <input
     placeholder="Customer Name"
     formControlName="customerName"
@@ -15,7 +17,7 @@
   />
 
   <button
-    class="waves-effect waves-light btn col s4"
+    class="waves-effect waves-light btn colDEL s4"
     *ngFor="let coffee of coffees"
     (click)="addCoffee(coffee)"
   >
@@ -24,8 +26,8 @@
 
   <ul class="collection">
     <li *ngFor="let coffee of coffeeOrder">
-      <span class="col s11"> {{ coffee }} </span
-      ><a class="col s1" (click)="removeCoffee(coffee)">x</a>
+      <a class="col s1" (click)="removeCoffee(coffee)"><i class="fa fa-trash"></i></a> 
+      <span class="col s11"> {{ coffee }} </span>
     </li>
   </ul>
 
@@ -34,5 +36,4 @@
     Submit
   </button>
 </form>
-
 
