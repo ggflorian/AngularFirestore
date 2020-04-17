@@ -14,14 +14,14 @@ export class OrdersComponent implements OnInit {
   ngOnInit() {}
 
   coffees = [
-    "Americano",
-    "Flat White",
     "Cappuccino",
     "Latte",
     "Espresso",
     "Machiato",
     "Mocha",
-    "Hot Chocolate",
+    // "Hot Chocolate",
+    // "Americano",
+    // "Flat White",
     "Tea"
   ];
 
