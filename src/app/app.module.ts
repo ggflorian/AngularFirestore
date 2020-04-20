@@ -28,6 +28,7 @@ import { environment } from 'src/environments/environment';
 
 import { AngularFireDatabaseModule } from '@angular/fire/database'; // without public_api?
 import { AppRoutingModule } from './app-routing.module';
+import { TaskListComponent } from './tasks/task-list/task-list.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { AppRoutingModule } from './app-routing.module';
     CustomerDetailsComponent,
     CustomersListComponent,
     CreateCustomerComponent,
+    TaskListComponent,
 
   ],
   imports: [
