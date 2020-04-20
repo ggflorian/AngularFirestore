@@ -5,6 +5,7 @@ export interface Task {
 };
 
 export class Author {
+    id: string;
     fullName: string;
     dateOfBirth: Date;
     placeOfBirth: string;

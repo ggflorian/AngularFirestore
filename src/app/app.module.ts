@@ -29,6 +29,7 @@ import { environment } from 'src/environments/environment';
 import { AngularFireDatabaseModule } from '@angular/fire/database'; // without public_api?
 import { AppRoutingModule } from './app-routing.module';
 import { TaskListComponent } from './tasks/task-list/task-list.component';
+import { TaskService } from './shared/task.service';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { TaskListComponent } from './tasks/task-list/task-list.component';
     CustomerDetailsComponent,
     CustomersListComponent,
     CreateCustomerComponent,
-    TaskListComponent,
+    
+    TaskListComponent
 
   ],
   imports: [
@@ -58,7 +60,7 @@ import { TaskListComponent } from './tasks/task-list/task-list.component';
     AngularFireDatabaseModule,
     ToastrModule.forRoot()
   ],
-  providers: [BookService, OrdersService, CustomerService],
+  providers: [BookService, TaskService, OrdersService, CustomerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

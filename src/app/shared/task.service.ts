@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestoreCollection, AngularFirestoreDocument, AngularFirestore } from '@angular/fire/firestore/public_api';
+import { AngularFirestoreCollection, AngularFirestoreDocument, AngularFirestore } from '@angular/fire/firestore';
 import { Task } from '../app.model';
+import { appConfig } from '../app.config';
 
 
 @Injectable({
@@ -13,7 +14,7 @@ export class TaskService {
   private taskDoc: AngularFirestoreDocument<Task>;
 
   constructor(private db: AngularFirestore) { 
-    this.tasks = this.db.collection<Task>("tasks");
+    this.tasks = this.db.collection<Task>(appConfig.endpoint);
   }
 
   addTask(task){
@@ -21,14 +22,16 @@ export class TaskService {
   }
 
   updateTask(id, data){
-    this.taskDoc = this.tasks.doc<Task>('tasks/' + id);
+    this.taskDoc = this.tasks.doc<Task>(id);
 
     this.taskDoc.update(data);
   }
 
-  deleteTask(id){
-    this.taskDoc = this.tasks.doc<Task>('tasks/' + id);
-    
+  deleteTask(id: string){
+    // this.taskDoc = this.tasks.doc<Task>('tasks/' + id); // why 3 args ?!?
+    //this.taskDoc = this.tasks.doc<Task>('${appConfig.endpoint}/${id}');
+    this.taskDoc = this.tasks.doc<Task>(id);
+
     this.taskDoc.delete();
   }
 

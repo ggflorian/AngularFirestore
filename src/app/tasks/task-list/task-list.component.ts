@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { AngularFirestore } from '@angular/fire/firestore/firestore';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { TaskService } from 'src/app/shared/task.service';
 import { appConfig } from 'src/app/app.config';
 import { Task } from 'src/app/app.model';
@@ -75,10 +75,10 @@ export class TaskListComponent implements OnInit {
   }
 
   deleteTask(task) {
-  
+  console.log(task);
     //Get the task id
     let taskId = task.id;
-
+    console.log(taskId);
     //delete the task
     this.taskService.deleteTask(taskId);
   }
